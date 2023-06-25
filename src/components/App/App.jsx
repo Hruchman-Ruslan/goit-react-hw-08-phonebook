@@ -1,44 +1,70 @@
-import { FormContact } from 'components/Form/Form';
-import { ContactList } from 'components/Contacts/Contacts';
-import { Filter } from 'components/Filter/Filter';
-import { Notification } from '../Notification/Notification';
+//=============== After last homework ========================
 
-import { Container, Section, Title, TitleContacts } from '../index';
+import { lazy } from 'react';
+import { Layout } from 'components/Layout';
+import { Route, Routes } from 'react-router-dom';
 
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contacts/operations';
-import { useContacts } from 'redux/contacts/useContacts';
-import { useDispatch } from 'react-redux';
+const HomePage = lazy(() => import('../../pages/Home'));
+const RegisterPage = lazy(() => import('../../pages/Register'));
+const LoginPage = lazy(() => import('../../pages/Login'));
+const ContactsPage = lazy(() => import('../../pages/Contacts'));
 
 export const App = () => {
-  const { contacts, isLoading, error } = useContacts();
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return (
-    <Container>
-      <Section>
-        <Title>Phonebook</Title>
-        <FormContact />
-      </Section>
-
-      <Section>
-        <TitleContacts>Contacts</TitleContacts>
-        <Filter />
-        {isLoading && !error && <b>Request in progress...</b>}
-        {contacts.length > 0 ? (
-          <ContactList />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
-      </Section>
-    </Container>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Route>
+    </Routes>
   );
 };
+
+//=============== After last homework ========================
+
+// import { FormContact } from 'components/Form/Form';
+// import { ContactList } from 'components/Contacts/Contacts';
+// import { Filter } from 'components/Filter/Filter';
+// import { Notification } from '../Notification/Notification';
+
+// import { Container, Section, Title, TitleContacts } from '../index';
+
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/contacts/operations';
+// import { useContacts } from 'redux/contacts/useContacts';
+// import { useDispatch } from 'react-redux';
+
+// export const App = () => {
+//   const { contacts, isLoading, error } = useContacts();
+
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     dispatch(fetchContacts());
+//   }, [dispatch]);
+
+//   return (
+//     <Container>
+//       <Section>
+//         <Title>Phonebook</Title>
+//         <FormContact />
+//       </Section>
+
+//       <Section>
+//         <TitleContacts>Contacts</TitleContacts>
+//         <Filter />
+//         {isLoading && !error && <b>Request in progress...</b>}
+//         {contacts.length > 0 ? (
+//           <ContactList />
+//         ) : (
+//           <Notification message="There is no feedback" />
+//         )}
+//       </Section>
+//     </Container>
+//   );
+// };
 
 // import { FormContact } from 'components/Form/Form';
 // import { ContactList } from 'components/Contacts/Contacts';
