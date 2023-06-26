@@ -9,10 +9,10 @@ export const ContactList = () => {
 
   return (
     <List>
-      {contactsFilterName.map(({ id, name, phone }) => (
+      {contactsFilterName.map(({ id, name, number }) => (
         <Item key={id}>
           <Text>
-            {name}: {phone}
+            {name}: {number}
           </Text>
           <Button type="button" onClick={() => handleDelete(id)}>
             Delete
@@ -28,7 +28,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
     }).isRequired
   ),
 };

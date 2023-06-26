@@ -8,11 +8,11 @@ import {
   Error,
 } from '../LoginForm/LoginForm.styled';
 import { useContacts } from 'redux/contacts/useContacts';
+import { register } from 'redux/auth/opetations';
 
 const schema = object().shape({
   name: string().required(),
   email: string().email(),
-  password: string().required(),
 });
 
 const INITIAL_STATE = {
@@ -22,11 +22,10 @@ const INITIAL_STATE = {
 };
 
 export const RegisterForm = () => {
-  const { handleNotificationForm } = useContacts();
+  const { dispatch } = useContacts();
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    handleNotificationForm(values);
+  const handleSubmit = ({ name, email, password }, { resetForm }) => {
+    dispatch(register({ name: name, email: email, password: password }));
     resetForm();
   };
 

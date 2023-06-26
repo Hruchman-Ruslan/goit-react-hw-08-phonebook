@@ -1,8 +1,10 @@
 //=============== After last homework ========================
 
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { Layout } from 'components/Layout';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/opetations';
 
 const HomePage = lazy(() => import('../../pages/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register'));
@@ -10,6 +12,12 @@ const LoginPage = lazy(() => import('../../pages/Login'));
 const ContactsPage = lazy(() => import('../../pages/Contacts'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
