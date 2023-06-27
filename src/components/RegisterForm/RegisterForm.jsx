@@ -24,8 +24,8 @@ const INITIAL_STATE = {
 export const RegisterForm = () => {
   const { dispatch } = useContacts();
 
-  const handleSubmit = ({ name, email, password }, { resetForm }) => {
-    dispatch(register({ name: name, email: email, password: password }));
+  const handleSubmit = (values, { resetForm }) => {
+    dispatch(register(values));
     resetForm();
   };
 
@@ -47,7 +47,7 @@ export const RegisterForm = () => {
           <Error name="email" component="p" />
         </Label>
         <Label>
-          Number
+          Password
           <FormikInput type="password" name="password" />
           <Error name="password" component="p" />
         </Label>

@@ -8,6 +8,7 @@ import {
   Error,
 } from '../LoginForm/LoginForm.styled';
 import { useContacts } from 'redux/contacts/useContacts';
+import { logIn } from 'redux/auth/opetations';
 
 const schema = object().shape({
   email: string().email(),
@@ -20,10 +21,10 @@ const INITIAL_STATE = {
 };
 
 export const LoginForm = () => {
-  const { handleNotificationForm } = useContacts();
+  const { dispatch } = useContacts();
 
   const handleSubmit = (values, { resetForm }) => {
-    handleNotificationForm(values);
+    dispatch(logIn(values));
     resetForm();
   };
 
