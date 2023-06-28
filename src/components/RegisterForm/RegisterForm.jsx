@@ -7,8 +7,7 @@ import {
   Button,
   Error,
 } from '../LoginForm/LoginForm.styled';
-import { useContacts } from 'redux/contacts/useContacts';
-import { register } from 'redux/auth/opetations';
+import { useAuth } from 'redux/auth/useAuth';
 
 const schema = object().shape({
   name: string().required(),
@@ -22,10 +21,10 @@ const INITIAL_STATE = {
 };
 
 export const RegisterForm = () => {
-  const { dispatch } = useContacts();
+  const { handleNotificationRegister } = useAuth();
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(register(values));
+    handleNotificationRegister(values);
     resetForm();
   };
 

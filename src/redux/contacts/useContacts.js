@@ -35,6 +35,7 @@ import {
 } from './selectors';
 import { addContact, deleteContact } from './operations';
 import { filterContact } from './filterSlice';
+import { toast } from 'react-toastify';
 
 export const useContacts = () => {
   const dispatch = useDispatch();
@@ -55,13 +56,18 @@ export const useContacts = () => {
     const existingContact = contacts.find(
       contact => contact.number === values.number
     );
+
     if (existingContact) {
-      alert(
-        `Sorry ${values.name}, this number is already registered, please enter another one.`
+      toast.error(
+        `Hello ${values.name}, I'm sorry, the number is already taken.`
       );
       return;
     }
-    dispatch(addContact({ ...values }));
+    if (!existingContact) {
+      toast.success(`User ${values.name} successfully created`);
+      dispatch(addContact({ ...values }));
+      return;
+    }
   };
 
   return {

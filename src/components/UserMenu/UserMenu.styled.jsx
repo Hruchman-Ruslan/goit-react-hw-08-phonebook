@@ -18,4 +18,12 @@ export const User = styled.p`
   align-items: center;
   font-weight: 700;
   margin-bottom: 0;
+  color: #a201ff;
+`;
+
+export const UserName = styled.span`
+  align-items: center;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #95ce10;
 `;
