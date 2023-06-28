@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import { useAuth } from 'redux/auth/useAuth';
+
+import { useAuth } from 'components';
 
 export const PrivateRoute = ({ children }) => {
   const { isLoggetIn } = useAuth();

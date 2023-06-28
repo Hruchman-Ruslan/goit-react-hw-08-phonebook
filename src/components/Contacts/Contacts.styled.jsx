@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const List = styled.ul`
+export const ListContact = styled.ul`
   display: flex;
   align-items: center;
   gap: 40px;
@@ -8,14 +8,14 @@ export const List = styled.ul`
   margin-top: 40px;
 `;
 
-export const Item = styled.li``;
+export const ItemContact = styled.li``;
 
-export const Text = styled.p`
+export const TextContact = styled.p`
   display: block;
   font-weight: 700;
 `;
 
-export const Button = styled.button`
+export const ButtonContacts = styled.button`
   display: block;
   margin: auto;
   font-size: 18px;

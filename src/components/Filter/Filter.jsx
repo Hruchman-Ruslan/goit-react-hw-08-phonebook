@@ -1,14 +1,12 @@
-import { Label, Input } from './Filter.styled';
-
-import { useContacts } from 'redux/contacts/useContacts';
+import { useContacts, LabelFilter, InputFilter } from 'components';
 
 export const Filter = () => {
   const { filter, handleFilter } = useContacts();
 
   return (
-    <Label>
+    <LabelFilter>
       Filter contacts by name
-      <Input type="text" onChange={handleFilter} value={filter} />
-    </Label>
+      <InputFilter type="text" onChange={handleFilter} value={filter} />
+    </LabelFilter>
   );
 };

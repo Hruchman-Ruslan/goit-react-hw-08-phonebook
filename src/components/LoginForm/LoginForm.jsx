@@ -1,13 +1,14 @@
 import { Formik } from 'formik';
 import { object, string } from 'yup';
+
 import {
-  FormikForm,
-  Label,
-  FormikInput,
-  Button,
-  Error,
-} from '../LoginForm/LoginForm.styled';
-import { useAuth } from 'redux/auth/useAuth';
+  ButtonLogin,
+  ErrorLogin,
+  FormikFormLogin,
+  InputLogin,
+  LabelLogin,
+  useAuth,
+} from 'components';
 
 const schema = object().shape({
   email: string().email(),
@@ -24,7 +25,6 @@ export const LoginForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     handleNotificationLogin(values);
-
     resetForm();
   };
 
@@ -34,20 +34,20 @@ export const LoginForm = () => {
       onSubmit={handleSubmit}
       initialValues={INITIAL_STATE}
     >
-      <FormikForm>
-        <Label>
+      <FormikFormLogin>
+        <LabelLogin>
           Email
-          <FormikInput type="text" name="email" />
-          <Error name="email" component="p" />
-        </Label>
-        <Label>
+          <InputLogin type="text" name="email" />
+          <ErrorLogin name="email" component="p" />
+        </LabelLogin>
+        <LabelLogin>
           Number
-          <FormikInput type="password" name="password" />
-          <Error name="password" component="p" />
-        </Label>
+          <InputLogin type="password" name="password" />
+          <ErrorLogin name="password" component="p" />
+        </LabelLogin>
 
-        <Button type="submit">Log In</Button>
-      </FormikForm>
+        <ButtonLogin type="submit">Log In</ButtonLogin>
+      </FormikFormLogin>
     </Formik>
   );
 };

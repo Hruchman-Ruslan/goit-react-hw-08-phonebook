@@ -1,5 +1,6 @@
 import { MutatingDots } from 'react-loader-spinner';
-import { WrapperStyle } from './Loader.styled';
+
+import { WrapperStyle } from 'components';
 
 export const Loader = () => {
   return (

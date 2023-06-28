@@ -1,13 +1,14 @@
 import { Formik } from 'formik';
 import { object, string } from 'yup';
+
 import {
-  FormikForm,
-  Label,
-  FormikInput,
-  Button,
-  Error,
-} from '../LoginForm/LoginForm.styled';
-import { useAuth } from 'redux/auth/useAuth';
+  ButtonRegister,
+  ErrorRegister,
+  FormikFormRegister,
+  InputRegister,
+  LabelRegister,
+  useAuth,
+} from 'components';
 
 const schema = object().shape({
   name: string().required(),
@@ -34,25 +35,25 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
       initialValues={INITIAL_STATE}
     >
-      <FormikForm>
-        <Label>
+      <FormikFormRegister>
+        <LabelRegister>
           Name
-          <FormikInput type="text" name="name" />
-          <Error name="name" component="p" />
-        </Label>
-        <Label>
+          <InputRegister type="text" name="name" />
+          <ErrorRegister name="name" component="p" />
+        </LabelRegister>
+        <LabelRegister>
           Email
-          <FormikInput type="text" name="email" />
-          <Error name="email" component="p" />
-        </Label>
-        <Label>
+          <InputRegister type="text" name="email" />
+          <ErrorRegister name="email" component="p" />
+        </LabelRegister>
+        <LabelRegister>
           Password
-          <FormikInput type="password" name="password" />
-          <Error name="password" component="p" />
-        </Label>
+          <InputRegister type="password" name="password" />
+          <ErrorRegister name="password" component="p" />
+        </LabelRegister>
 
-        <Button type="submit">Register</Button>
-      </FormikForm>
+        <ButtonRegister type="submit">Register</ButtonRegister>
+      </FormikFormRegister>
     </Formik>
   );
 };

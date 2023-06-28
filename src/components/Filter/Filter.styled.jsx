@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-export const Label = styled.label`
+export const LabelFilter = styled.label`
   color: brown;
   font-weight: 900;
   font-size: 20px;
 `;
 
-export const Input = styled.input`
+export const InputFilter = styled.input`
   display: block;
 
   font-size: 20px;

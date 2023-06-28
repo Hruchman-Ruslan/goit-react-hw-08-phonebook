@@ -1,25 +1,29 @@
 import PropTypes from 'prop-types';
 
-import { List, Item, Text, Button } from './Contacts.styled';
-
-import { useContacts } from 'redux/contacts/useContacts';
+import {
+  ButtonContacts,
+  ItemContact,
+  ListContact,
+  TextContact,
+  useContacts,
+} from 'components';
 
 export const ContactList = () => {
   const { handleDelete, contactsFilterName } = useContacts();
 
   return (
-    <List>
+    <ListContact>
       {contactsFilterName.map(({ id, name, number }) => (
-        <Item key={id}>
-          <Text>
+        <ItemContact key={id}>
+          <TextContact>
             {name}: {number}
-          </Text>
-          <Button type="button" onClick={() => handleDelete(id)}>
+          </TextContact>
+          <ButtonContacts type="button" onClick={() => handleDelete(id)}>
             Delete
-          </Button>
-        </Item>
+          </ButtonContacts>
+        </ItemContact>
       ))}
-    </List>
+    </ListContact>
   );
 };
 

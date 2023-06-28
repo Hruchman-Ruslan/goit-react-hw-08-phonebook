@@ -1,4 +1,4 @@
-import { NavLinkNavigation } from './Navigation.styled';
+import { NavLinkNavigation } from 'components';
 
 export const Navigation = () => {
   return (

@@ -1,8 +1,14 @@
 import { Formik } from 'formik';
 import { object, string } from 'yup';
 
-import { FormikForm, Label, FormikInput, Button, Error } from './Form.styled';
-import { useContacts } from 'redux/contacts/useContacts';
+import {
+  FormikForm,
+  Label,
+  FormikInput,
+  Button,
+  Error,
+  useContacts,
+} from 'components';
 
 const phoneRegExp =
   /^(?:\+38)?(?:\(0\d{2}\)|0\d{2})[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}$/;

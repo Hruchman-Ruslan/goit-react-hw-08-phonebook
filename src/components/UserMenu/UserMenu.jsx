@@ -1,5 +1,10 @@
-import { useAuth } from 'redux/auth/useAuth';
-import { ButtonLogOut, User, UserName, WrapperLogout } from './UserMenu.styled';
+import {
+  ButtonLogOut,
+  User,
+  UserName,
+  WrapperLogout,
+  useAuth,
+} from 'components';
 
 export const UserMenu = () => {
   const { user, handleNotificationLogOut } = useAuth();
