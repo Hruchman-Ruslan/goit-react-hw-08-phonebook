@@ -9,20 +9,13 @@ import {
   Filter,
   FormContact,
 } from 'components';
-import { toast } from 'react-toastify';
 
 export default function Contacts() {
-  const { contacts, isLoading, error, dispatch } = useContacts();
+  const { isLoading, error, dispatch } = useContacts();
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (contacts.length === 0) {
-      toast.info('No contact 😧');
-    }
-  }, [contacts]);
 
   return (
     <Section>

@@ -1,14 +1,36 @@
 import styled from '@emotion/styled';
 
 export const ListContact = styled.ul`
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
 
   margin-top: 40px;
 `;
 
-export const ItemContact = styled.li``;
+export const ItemContact = styled.li`
+  border: 2px solid #e7e7e7;
+  border-radius: 4px;
+  padding: 0.5rem;
+
+  border: 4px solid transparent;
+  background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(
+        to right,
+        rgba(196, 20, 195, 1) 12%,
+        rgba(0, 255, 255, 1) 33%,
+        rgba(29, 11, 28, 1) 61%
+      )
+      border-box;
+
+  :hover,
+  :focus {
+    filter: drop-shadow(0px 0px 20px #a201ff);
+    color: #a201ff;
+    border: 2px solid #00ffff;
+  }
+`;
 
 export const TextContact = styled.p`
   display: block;

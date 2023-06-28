@@ -25,6 +25,7 @@ export * from './Notification/Notification';
 export * from './Form/Form';
 export * from './Filter/Filter';
 export * from './Contacts/Contacts';
+export * from './LoginForm/LoginForm';
 
 export * from '../redux/contacts/index';
 export * from '../redux/auth/index';

@@ -48,13 +48,12 @@ export const FormContact = () => {
           <FormikInput type="text" name="name" />
           <Error name="name" component="p" />
         </Label>
+        <Button type="submit">Add Contacts</Button>
         <Label>
           Number
           <FormikInput type="tel" name="number" />
           <Error name="number" component="p" />
         </Label>
-
-        <Button type="submit">Add Contacts</Button>
       </FormikForm>
     </Formik>
   );

@@ -3,7 +3,9 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormikForm = styled(Form)`
   display: flex;
-  gap: 40px;
+  align-content: baseline;
+  gap: 20px;
+  margin-bottom: 80px;
 `;
 
 export const Label = styled.label`
@@ -12,8 +14,8 @@ export const Label = styled.label`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  gap: 40px;
-  padding: 40px;
+  gap: 20px;
+  padding: 20px;
 
   filter: drop-shadow(0px 0px 20px #a201ff);
 `;
@@ -37,7 +39,7 @@ export const FormikInput = styled(Field)`
 `;
 
 export const Button = styled.button`
-  display: block;
+  display: inline-block;
   margin: auto;
   font-size: 18px;
   font-weight: 700;
