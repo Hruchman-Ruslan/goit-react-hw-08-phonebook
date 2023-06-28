@@ -1,13 +1,14 @@
 //=============== After last homework ========================
 
 import { lazy, useEffect } from 'react';
-import { Layout } from 'components/Layout';
+import { Layout } from 'components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/opetations';
 import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
 import { PublicRoute } from 'components/PublicRoute/PublicRoute';
 import { useAuth } from 'redux/auth/useAuth';
+import { Loader } from 'components/Loader/Loader';
 
 const HomePage = lazy(() => import('../../pages/Home'));
 const RegisterPage = lazy(() => import('../../pages/Register'));
@@ -23,7 +24,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
