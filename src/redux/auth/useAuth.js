@@ -1,6 +1,9 @@
+// If you want to consider 1 option, do not forget to leave a comment toast 😉
+// import { toast } from 'react-toastify';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn, selectIsRefreshing, selectUser } from './selectors';
-import { toast } from 'react-toastify';
+
 import { logIn, logOut, register } from './opetations';
 
 export const useAuth = () => {
@@ -9,50 +12,56 @@ export const useAuth = () => {
   const isRefreshing = useSelector(selectIsRefreshing);
   const user = useSelector(selectUser);
 
-  const handleNotificationLogin = user => {
-    if (isLoggetIn) {
-      // Чому він не працює?????
-      toast.error(
-        `Hello ${user.email}, I'm sorry, the number is already taken.`
-      );
-      return;
-    }
-    if (!isLoggetIn) {
-      toast.success(`User ${user.email} successfully created`);
-      dispatch(logIn({ ...user }));
-      return;
-    }
+  // The first option 😉
+  // const handleLogin = async user => {
+  //   try {
+  //     await dispatch(logIn({ ...user })).unwrap();
+  //     toast.success(`User ${user.email} successfully created`);
+  //   } catch (error) {
+  //     toast.error(
+  //       `Hello ${user.email}, I'm sorry, the number is already taken.`
+  //     );
+  //   }
+  // };
+
+  // const handleRegister = async user => {
+  //   try {
+  //     await dispatch(register({ ...user })).unwrap();
+  //     toast.success(`User ${user.email} successfully created`);
+  //   } catch (error) {
+  //     toast.error(
+  //       `Hello ${user.email}, I'm sorry, the number is already taken.`
+  //     );
+  //   }
+  // };
+
+  // const handleLogOut = () => {
+  //   if (isLoggetIn) {
+  //     toast.success(`See you soon 😉`);
+  //     dispatch(logOut());
+  //     return;
+  //   }
+  // };
+
+  // The next option 😊
+  const handleLogin = user => {
+    dispatch(logIn({ ...user }));
   };
 
-  const handleNotificationRegister = user => {
-    if (isLoggetIn) {
-      // Чому він не працює?????
-      toast.error(
-        `Hello ${user.email}, I'm sorry, the number is already taken.`
-      );
-      return;
-    }
-    if (!isLoggetIn) {
-      toast.success(`User ${user.email} successfully created`);
-      dispatch(register({ ...user }));
-      return;
-    }
+  const handleRegister = user => {
+    dispatch(register({ ...user }));
   };
 
-  const handleNotificationLogOut = () => {
-    if (isLoggetIn) {
-      toast.success(`See you soon 😉`);
-      dispatch(logOut());
-      return;
-    }
+  const handleLogOut = () => {
+    dispatch(logOut());
   };
 
   return {
     isLoggetIn,
     isRefreshing,
     user,
-    handleNotificationLogin,
-    handleNotificationRegister,
-    handleNotificationLogOut,
+    handleLogin,
+    handleRegister,
+    handleLogOut,
   };
 };

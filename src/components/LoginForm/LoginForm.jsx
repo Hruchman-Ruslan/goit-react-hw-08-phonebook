@@ -21,10 +21,10 @@ const INITIAL_STATE = {
 };
 
 export const LoginForm = () => {
-  const { handleNotificationLogin } = useAuth();
+  const { handleLogin } = useAuth();
 
   const handleSubmit = (values, { resetForm }) => {
-    handleNotificationLogin(values);
+    handleLogin(values);
     resetForm();
   };
 

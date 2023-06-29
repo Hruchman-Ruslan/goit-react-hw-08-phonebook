@@ -7,14 +7,14 @@ import {
 } from 'components';
 
 export const UserMenu = () => {
-  const { user, handleNotificationLogOut } = useAuth();
+  const { user, handleLogOut } = useAuth();
 
   return (
     <WrapperLogout>
       <User>
         Welcome, <UserName>{user.name}</UserName>
       </User>
-      <ButtonLogOut type="button" onClick={handleNotificationLogOut}>
+      <ButtonLogOut type="button" onClick={handleLogOut}>
         Logout
       </ButtonLogOut>
     </WrapperLogout>

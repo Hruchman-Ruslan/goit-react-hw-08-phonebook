@@ -22,10 +22,10 @@ const INITIAL_STATE = {
 };
 
 export const RegisterForm = () => {
-  const { handleNotificationRegister } = useAuth();
+  const { handleRegister } = useAuth();
 
   const handleSubmit = (values, { resetForm }) => {
-    handleNotificationRegister(values);
+    handleRegister(values);
     resetForm();
   };
 
