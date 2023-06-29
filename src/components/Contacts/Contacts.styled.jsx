@@ -2,9 +2,8 @@ import styled from '@emotion/styled';
 
 export const ListContact = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
 
   margin-top: 40px;
 `;

@@ -15,7 +15,7 @@ const phoneRegExp =
 
 const schema = object().shape({
   name: string()
-    .min(5, 'Must be at least 3 characters long')
+    .min(3, 'Must be at least 3 characters long')
     .max(12, 'Must be no more than 12 characters')
     .required('This field is required'),
   number: string()

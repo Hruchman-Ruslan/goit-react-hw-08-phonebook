@@ -3,8 +3,9 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormikForm = styled(Form)`
   display: flex;
-  align-content: baseline;
-  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   margin-bottom: 80px;
 `;
 

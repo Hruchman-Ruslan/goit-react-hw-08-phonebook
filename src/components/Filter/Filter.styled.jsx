@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const LabelFilter = styled.label`
   color: brown;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 48px;
 `;
 
 export const InputFilter = styled.input`
