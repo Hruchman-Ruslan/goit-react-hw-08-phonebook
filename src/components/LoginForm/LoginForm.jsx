@@ -41,7 +41,7 @@ export const LoginForm = () => {
           <ErrorLogin name="email" component="p" />
         </LabelLogin>
         <LabelLogin>
-          Number
+          Password
           <InputLogin type="password" name="password" />
           <ErrorLogin name="password" component="p" />
         </LabelLogin>
