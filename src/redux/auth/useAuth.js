@@ -16,10 +16,10 @@ export const useAuth = () => {
   // const handleLogin = async user => {
   //   try {
   //     await dispatch(logIn({ ...user })).unwrap();
-  //     toast.success(`User ${user.email} successfully created`);
+  //     toast.success(`Hi ${credentials.email} 😉`);
   //   } catch (error) {
   //     toast.error(
-  //       `Hello ${user.email}, I'm sorry, the number is already taken.`
+  //       `Hi ${credentials.email}, sorry, but the email address or password is incorrect.`
   //     );
   //   }
   // };
@@ -30,7 +30,7 @@ export const useAuth = () => {
   //     toast.success(`User ${user.email} successfully created`);
   //   } catch (error) {
   //     toast.error(
-  //       `Hello ${user.email}, I'm sorry, the number is already taken.`
+  //       `Hi ${credentials.email}, sorry, but the email address or password is incorrect.`
   //     );
   //   }
   // };

@@ -1,10 +1,10 @@
-import { NavLinkAuth } from 'components';
+import { NavLinkAuth, WrapperAuth } from 'components';
 
 export const AuthNav = () => {
   return (
-    <div>
+    <WrapperAuth>
       <NavLinkAuth to="/register">Register</NavLinkAuth>
       <NavLinkAuth to="/login">Log In</NavLinkAuth>
-    </div>
+    </WrapperAuth>
   );
 };

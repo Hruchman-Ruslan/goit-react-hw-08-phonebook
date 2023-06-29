@@ -11,8 +11,8 @@ import {
 } from 'components';
 
 const schema = object().shape({
-  email: string().email(),
-  password: string().required(),
+  email: string().email().required('Please enter a valid email @'),
+  password: string().required('Must be at least 7 characters long'),
 });
 
 const INITIAL_STATE = {

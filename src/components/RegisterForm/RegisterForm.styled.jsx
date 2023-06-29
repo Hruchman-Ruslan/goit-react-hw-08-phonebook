@@ -3,6 +3,8 @@ import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormikFormRegister = styled(Form)`
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 40px;
 `;
 
@@ -39,11 +41,11 @@ export const InputRegister = styled(Field)`
 export const ButtonRegister = styled.button`
   display: block;
   margin: auto;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
   color: #a201ff;
 
-  padding: 8px;
+  padding: 20px 40px;
 
   border: 2px solid purple;
   border-radius: 8px;
@@ -78,4 +80,5 @@ export const ErrorRegister = styled(ErrorMessage)`
   top: 100%;
   filter: drop-shadow(0px 0px 20px red);
   color: red;
+  font-size: 18px;
 `;

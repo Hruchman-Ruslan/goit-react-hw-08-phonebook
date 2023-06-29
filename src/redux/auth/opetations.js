@@ -74,13 +74,13 @@ export const register = createAsyncThunk(
   'auth/register',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/signup', credentials);
-      setAuthHeader(res.data.token);
+      const { data } = await axios.post('/users/signup', credentials);
+      setAuthHeader(data.token);
       toast.success(`User ${credentials.email} successfully created`);
-      return res.data;
+      return data;
     } catch (error) {
       toast.error(
-        `Hello ${credentials.email}, I'm sorry, the number is already taken.`
+        `Hi ${credentials.email}, sorry, but the email address or password is incorrect.`
       );
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -91,13 +91,13 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', credentials);
-      setAuthHeader(res.data.token);
-      toast.success(`User ${credentials.email} successfully created`);
-      return res.data;
+      const { data } = await axios.post('/users/login', credentials);
+      setAuthHeader(data.token);
+      toast.success(`Hi ${credentials.email} 😉`);
+      return data;
     } catch (error) {
       toast.error(
-        `Hello ${credentials.email}, I'm sorry, the number is already taken.`
+        `Hi ${credentials.email}, sorry, but the email address or password is incorrect.`
       );
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -127,9 +127,9 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get('/users/current');
+      const { data } = await axios.get('/users/current');
       toast.success('You are back 😃');
-      return res.data;
+      return data;
     } catch (error) {
       toast.error('Sorry, but something went wrong 😒');
       return thunkAPI.rejectWithValue(error.message);
