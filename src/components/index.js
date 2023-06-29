@@ -7,7 +7,6 @@ export * from './Filter/Filter.styled';
 export * from './Form/Form.styled';
 export * from './LoginForm/LoginForm.styled';
 export * from './Navigation/Navigation.styled';
-export * from './Notification/Notification.styled';
 export * from './RegisterForm/RegisterForm.styled';
 export * from './Section/Section.styled';
 export * from './UserMenu/UserMenu.styled';

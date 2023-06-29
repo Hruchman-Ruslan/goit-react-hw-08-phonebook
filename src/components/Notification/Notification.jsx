@@ -16,8 +16,8 @@ export const Notification = () => {
       pauseOnHover
       theme="dark"
       style={{
-        width: 400,
-        fontSize: 14,
+        width: 500,
+        fontSize: 24,
         fontWeight: 700,
       }}
     />
