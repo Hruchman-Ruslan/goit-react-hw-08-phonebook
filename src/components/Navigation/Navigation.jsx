@@ -1,10 +1,14 @@
-import { NavLinkNavigation } from 'components';
+import { NavLinkNavigation, useAuth } from 'components';
 
 export const Navigation = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <nav>
       <NavLinkNavigation to="/">Home</NavLinkNavigation>
-      <NavLinkNavigation to="/contacts">Contacts</NavLinkNavigation>
+      {isLoggedIn && (
+        <NavLinkNavigation to="/contacts">Contacts</NavLinkNavigation>
+      )}
     </nav>
   );
 };

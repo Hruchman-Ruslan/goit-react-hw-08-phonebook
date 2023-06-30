@@ -1,10 +1,3 @@
-//=============== Before ========================
-
-// export const selectContacts = state => state.contacts.items;
-// export const selectFilter = state => state.contacts.filter;
-
-//=============== After ========================
-
 import { createSelector } from '@reduxjs/toolkit';
 
 export const selectContacts = state => state.contacts.items;

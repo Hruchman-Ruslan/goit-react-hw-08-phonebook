@@ -13,7 +13,7 @@ export * from './UserMenu/UserMenu.styled';
 export * from './Loader/Loader.styled';
 
 export * from './PrivateRoute/PrivateRoute';
-export * from './PublicRoute/PublicRoute';
+export * from './NotAuthRoute/NotAuthRoute';
 export * from './Loader/Loader';
 export * from './Navigation/Navigation';
 export * from './AuthNav/AuthNav';
