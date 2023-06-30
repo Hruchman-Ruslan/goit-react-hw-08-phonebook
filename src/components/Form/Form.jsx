@@ -2,9 +2,10 @@ import { Formik } from 'formik';
 import { object, string } from 'yup';
 
 import {
-  FormikForm,
+  ContactForm,
   Label,
-  FormikInput,
+  ContactInput,
+  FormWrapper,
   Button,
   Error,
   useContacts,
@@ -42,19 +43,21 @@ export const FormContact = () => {
       onSubmit={handleSubmit}
       initialValues={INITIAL_STATE}
     >
-      <FormikForm>
-        <Label>
-          Name
-          <FormikInput type="text" name="name" />
-          <Error name="name" component="p" />
-        </Label>
+      <ContactForm>
+        <FormWrapper>
+          <Label>
+            Name
+            <ContactInput type="text" name="name" />
+            <Error name="name" component="p" />
+          </Label>
+          <Label>
+            Number
+            <ContactInput type="tel" name="number" />
+            <Error name="number" component="p" />
+          </Label>
+        </FormWrapper>
         <Button type="submit">Add Contacts</Button>
-        <Label>
-          Number
-          <FormikInput type="tel" name="number" />
-          <Error name="number" component="p" />
-        </Label>
-      </FormikForm>
+      </ContactForm>
     </Formik>
   );
 };

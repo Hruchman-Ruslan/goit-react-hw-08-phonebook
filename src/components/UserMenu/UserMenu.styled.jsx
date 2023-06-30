@@ -3,7 +3,12 @@ import styled from '@emotion/styled';
 export const WrapperLogout = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const ButtonLogOut = styled.button`
@@ -34,6 +39,7 @@ export const ButtonLogOut = styled.button`
 
 export const User = styled.p`
   display: block;
+  text-align: center;
   align-items: center;
   font-weight: 700;
   margin-bottom: 0;

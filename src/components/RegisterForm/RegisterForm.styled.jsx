@@ -1,11 +1,22 @@
 import styled from '@emotion/styled';
 import { Form, Field, ErrorMessage } from 'formik';
 
-export const FormikFormRegister = styled(Form)`
+export const FormRegister = styled(Form)``;
+
+export const RegisterWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 768px) {
+    width: 480px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 320px;
+  }
 `;
 
 export const LabelRegister = styled.label`
@@ -45,7 +56,7 @@ export const ButtonRegister = styled.button`
   font-weight: 700;
   color: #a201ff;
 
-  padding: 20px 40px;
+  padding: 20px 60px;
 
   border: 2px solid purple;
   border-radius: 8px;
@@ -81,4 +92,5 @@ export const ErrorRegister = styled(ErrorMessage)`
   filter: drop-shadow(0px 0px 20px red);
   color: red;
   font-size: 18px;
+  font-weight: 900;
 `;

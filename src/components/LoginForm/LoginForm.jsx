@@ -4,7 +4,8 @@ import { object, string } from 'yup';
 import {
   ButtonLogin,
   ErrorLogin,
-  FormikFormLogin,
+  FormLogin,
+  LoginWrapper,
   InputLogin,
   LabelLogin,
   useAuth,
@@ -34,20 +35,21 @@ export const LoginForm = () => {
       onSubmit={handleSubmit}
       initialValues={INITIAL_STATE}
     >
-      <FormikFormLogin>
-        <LabelLogin>
-          Email
-          <InputLogin type="text" name="email" />
-          <ErrorLogin name="email" component="p" />
-        </LabelLogin>
-        <LabelLogin>
-          Password
-          <InputLogin type="password" name="password" />
-          <ErrorLogin name="password" component="p" />
-        </LabelLogin>
-
+      <FormLogin>
+        <LoginWrapper>
+          <LabelLogin>
+            Email
+            <InputLogin type="text" name="email" />
+            <ErrorLogin name="email" component="p" />
+          </LabelLogin>
+          <LabelLogin>
+            Password
+            <InputLogin type="password" name="password" />
+            <ErrorLogin name="password" component="p" />
+          </LabelLogin>
+        </LoginWrapper>
         <ButtonLogin type="submit">Log In</ButtonLogin>
-      </FormikFormLogin>
+      </FormLogin>
     </Formik>
   );
 };

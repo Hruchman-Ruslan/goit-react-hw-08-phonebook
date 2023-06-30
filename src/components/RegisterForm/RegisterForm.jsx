@@ -4,9 +4,10 @@ import { object, string } from 'yup';
 import {
   ButtonRegister,
   ErrorRegister,
-  FormikFormRegister,
+  FormRegister,
   InputRegister,
   LabelRegister,
+  RegisterWrapper,
   useAuth,
 } from 'components';
 
@@ -36,25 +37,27 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
       initialValues={INITIAL_STATE}
     >
-      <FormikFormRegister>
-        <LabelRegister>
-          Name
-          <InputRegister type="text" name="name" />
-          <ErrorRegister name="name" component="p" />
-        </LabelRegister>
-        <LabelRegister>
-          Email
-          <InputRegister type="text" name="email" />
-          <ErrorRegister name="email" component="p" />
-        </LabelRegister>
-        <LabelRegister>
-          Password
-          <InputRegister type="password" name="password" />
-          <ErrorRegister name="password" component="p" />
-        </LabelRegister>
+      <FormRegister>
+        <RegisterWrapper>
+          <LabelRegister>
+            Name
+            <InputRegister type="text" name="name" />
+            <ErrorRegister name="name" component="p" />
+          </LabelRegister>
+          <LabelRegister>
+            Email
+            <InputRegister type="text" name="email" />
+            <ErrorRegister name="email" component="p" />
+          </LabelRegister>
+          <LabelRegister>
+            Password
+            <InputRegister type="password" name="password" />
+            <ErrorRegister name="password" component="p" />
+          </LabelRegister>
+        </RegisterWrapper>
 
         <ButtonRegister type="submit">Register</ButtonRegister>
-      </FormikFormRegister>
+      </FormRegister>
     </Formik>
   );
 };
